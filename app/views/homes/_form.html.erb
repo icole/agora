@@ -1,0 +1,29 @@
+<%= render layout: 'shared/form_container' do %>
+  <%= form_with(model: home, class: "contents") do |form| %>
+    <% if home.errors.any? %>
+      <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+        <h2><%= pluralize(home.errors.count, "error") %> prohibited this home from being saved:</h2>
+        <ul>
+          <% home.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="my-5">
+      <%= form.label :number %>
+      <%= form.text_field :number, class: "block shadow rounded-md border border-gray-400 outline-none focus:outline-blue-600 px-3 py-2 mt-2 w-full" %>
+    </div>
+    <div class="my-5">
+      <%= form.label :unit %>
+      <%= form.text_field :unit, class: "block shadow rounded-md border border-gray-400 outline-none focus:outline-blue-600 px-3 py-2 mt-2 w-full" %>
+    </div>
+    <div class="my-5">
+      <%= form.label :pays_hoa %>
+      <%= form.checkbox :pays_hoa, class: "block shadow rounded-md border border-gray-400 outline-none focus:outline-blue-600 mt-2 h-5 w-5" %>
+    </div>
+    <div class="inline">
+      <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    </div>
+  <% end %>
+<% end %>
