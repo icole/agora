@@ -60,7 +60,7 @@ group :development do
   gem "sorbet"
 end
 
-gem "tailwindcss-rails", "~> 3.1"
+gem "tailwindcss-rails", "~> 3.3"
 
 gem "htmlbeautifier", "~> 1.4"
 
